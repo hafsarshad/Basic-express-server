@@ -1,20 +1,33 @@
+// Enum for Motorcycle types
+enum MotorcycleType {
+    Sport = "Sport",
+    Touring = "Touring",
+    Standard = "Standard"
+}
+
+// Global Vehicle Interface
 interface Vehicle {
     make: string;
     model: string;
     year: number;
     color: string;
-    vin: string; 
+    vin: string;
 }
+
+// Car Interface extending Vehicle
 interface Car extends Vehicle {
     seatingCapacity: number;
     isElectric: boolean;
 }
+
+// Motorcycle Interface extending Vehicle
 interface Motorcycle extends Vehicle {
-    engineDisplacement: number; // in cc
+    engineDisplacement: number; 
     hasSidecar: boolean;
-    type: "Sport" | "Touring" | "Dirt Bike" | "Standard";
+    type: MotorcycleType; 
 }
 
+// Example 
 const myCar: Car = {
     make: "Toyota",
     model: "Corolla altis",
@@ -33,8 +46,13 @@ const myMotorcycle: Motorcycle = {
     vin: "987654321HGFEDCBA",
     engineDisplacement: 599,
     hasSidecar: false,
-    type: "Sport"
+    type: MotorcycleType.Sport 
 };
+
+// Console log the objects
+console.log('Car Object:', myCar);
+console.log('Motorcycle Object:', myMotorcycle);
+
 
 
 ////interface for clothes
@@ -47,6 +65,11 @@ interface ClothingItem {
     material: string;
     price: number;
 }
+enum DressLength {
+    Short = 'short',
+    Knee = 'knee',
+    Floor = 'floor'
+}
 interface Shirt extends ClothingItem {
     sleeveLength: 'short' | 'long' | 'sleeveless';
     hasCollar: boolean;
@@ -54,7 +77,7 @@ interface Shirt extends ClothingItem {
 }
 interface Dress extends ClothingItem {
     dressType: 'casual' | 'formal';
-    length: 'short' | 'knee' | 'floor';
+    length:DressLength;
     sleeveStyle: 'sleeveless' | 'cap' | 'short' | 'long';
     hasBelt: boolean;
 }

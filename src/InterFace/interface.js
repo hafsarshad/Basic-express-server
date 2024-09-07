@@ -1,3 +1,11 @@
+// Enum for Motorcycle types
+var MotorcycleType;
+(function (MotorcycleType) {
+    MotorcycleType["Sport"] = "Sport";
+    MotorcycleType["Touring"] = "Touring";
+    MotorcycleType["Standard"] = "Standard";
+})(MotorcycleType || (MotorcycleType = {}));
+// Example 
 var myCar = {
     make: "Toyota",
     model: "Corolla altis",
@@ -15,8 +23,17 @@ var myMotorcycle = {
     vin: "987654321HGFEDCBA",
     engineDisplacement: 599,
     hasSidecar: false,
-    type: "Sport"
+    type: MotorcycleType.Sport
 };
+// Console log the objects
+console.log('Car Object:', myCar);
+console.log('Motorcycle Object:', myMotorcycle);
+var DressLength;
+(function (DressLength) {
+    DressLength["Short"] = "short";
+    DressLength["Knee"] = "knee";
+    DressLength["Floor"] = "floor";
+})(DressLength || (DressLength = {}));
 var myShirt = {
     brand: 'Cambrige',
     size: 'M',
